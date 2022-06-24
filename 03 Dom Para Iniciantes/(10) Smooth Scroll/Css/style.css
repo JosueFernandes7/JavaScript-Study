@@ -264,3 +264,12 @@ body {
     transform: translateX(0);
   }
 }
+.js .js-scroll {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: 0.3s;
+}
+.js .js-scroll.active {
+  transform: translateX(0px);
+  opacity: 1;
+}
