@@ -35,4 +35,4 @@ for (let i = 0; i < frutas.length; i++) {
 }
 // Coloque a última fruta da array acima em uma variável,
 // sem remover a mesma da array.
-var lastFruit = frutas[frutas.length-1];
+var lastFruit = frutas[--frutas.length];
