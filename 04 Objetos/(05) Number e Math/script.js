@@ -1,61 +1,26 @@
-// Utilizando o foreach na array abaixo,
-// some os valores de Taxa e os valores de Recebimento
+// Retorne um número aleatório
+// entre 1050 e 2000
+const aleat = Math.random() * (2000 - 1050) + 1050;
+console.log(aleat);
+// Retorne o maior número da lista abaixo
+const numeros = "4, 5, 20, 8, 9";
+const array = numeros.split(",");
+console.log(Math.max(...array)); // spread
 
-// const transacoes = [
-//   {
-//     descricao: "Taxa do Pão",
-//     valor: "R$ 39",
-//   },
-//   {
-//     descricao: "Taxa do Mercado",
-//     valor: "R$ 129",
-//   },
-//   {
-//     descricao: "Recebimento de Cliente",
-//     valor: "R$ 99",
-//   },
-//   {
-//     descricao: "Taxa do Banco",
-//     valor: "R$ 129",
-//   },
-//   {
-//     descricao: "Recebimento de Cliente",
-//     valor: "R$ 49",
-//   },
-// ];
-// let taxa = 0;
-// let recebimento = 0;
-// transacoes.forEach((item) => {
-//   const cleanNumber = +item.valor.slice(3, 20);
-//   if (item.descricao.includes("Taxa")) {
-//     taxa += cleanNumber;
-//   } else if (item.descricao.includes("Recebimento")) {
-//     recebimento += cleanNumber;
-//   }
-// });
-// console.log(taxa,recebimento,recebimento-taxa);
+// Crie uma função para limpar os preços
+// e retornar os números com centavos arredondados
+// depois retorne a soma total
+const listaPrecos = ["R$ 59,99", " R$ 100,222", "R$ 230  ", "r$  200"];
 
-// Retorne uma array com a lista abaixo
-const transportes = "Carro;Avião;Trem;Ônibus;Bicicleta";
+let somaTotal = 0;
+function limparPreco(preco) {
+  preco = +preco.toUpperCase().replace("R$", "").trim().
+  replace(",", ".");
+  preco = +preco.toFixed(2);
+  return preco;
+}
 
-const transpArray = transportes.split(";");
-// Substitua todos os span's por a's
-let html = `<ul>
-                <li><span>Sobre</span></li>
-                <li><span>Produtos</span></li>
-                <li><span>Contato</span></li>
-              </ul>`;
-html = html.split('span').join('a');
-console.log(html);
-// Retorne o último caracter da frase
-const frase = "Melhor do ano!";
-console.log(frase[--frase.length]);
-
-// Retorne o total de taxas
-const transacoes2 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
-let taxas =0;
-transacoes2.forEach(item => {
-  if(item.toUpperCase().includes('TAXA')) {
-    taxas++;
-  }
-})
+listaPrecos.forEach((item) => {
+  somaTotal += limparPreco(item)
+});
+console.log(somaTotal);
