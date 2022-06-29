@@ -24,3 +24,5 @@ listaPrecos.forEach((item) => {
   somaTotal += limparPreco(item)
 });
 console.log(somaTotal);
+
+console.log(somaTotal.toLocaleString('pt-BR'));
