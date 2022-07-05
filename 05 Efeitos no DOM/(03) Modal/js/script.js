@@ -4,9 +4,10 @@ import initAnimatelScroll from './modules/scroll.animacao.js';
 import initFaqAccordion from './modules/accordion.js'
 import initTabNav from './modules/tabnav.js';
 
+import initModal from './modules/modal.js';
 
-initScrollSuave();
+initScrollSuave();  
 initAnimatelScroll();
 initFaqAccordion();
 initTabNav();
-
+initModal();
